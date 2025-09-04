@@ -1,0 +1,29 @@
+bindPort = 7000  # FRP服务端监听端口，用于与客户端通信:cite[2]:cite[6]
+auth.token = "your_strong_password_here"  # 认证令牌，客户端需配置相同令牌才能连接:cite[2]:cite[6]
+
+# 可选: Web仪表盘配置，便于监控FRP状态
+webServer.addr = "0.0.0.0"  # 仪表盘监听地址，0.0.0.0表示允许所有IP访问
+webServer.port = 7500        # 仪表盘访问端口
+webServer.user = "admin"     # 登录仪表盘的用户名
+webServer.password = "admin_dashboard_password"  # 登录仪表盘的强密码
+
+# 可选: 用于HTTP/HTTPS类型代理的域名访问
+vhostHTTPPort = 80    # HTTP虚拟主机端口
+vhostHTTPSPort = 443  # HTTPS虚拟主机端口
+
+# 可选: 高级设置
+# bindAddr = "0.0.0.0"                # 服务端监听地址，默认0.0.0.0:cite[6]
+# maxPortsPerClient = 10              # 限制单个客户端最大代理数，默认无限制:cite[6]
+# udpPacketSize = 1500                # UDP代理支持的最大包长度:cite[6]
+
+# 可选: 传输层安全设置
+#[transport.tls]
+#force = false                        # 是否强制TLS:cite[6]
+#certFile = "/path/to/server.crt"     # TLS证书文件路径:cite[6]
+#keyFile = "/path/to/server.key"      # TLS密钥文件路径:cite[6]
+
+# 可选: 日志配置:cite[6]
+[log]
+to = "./frps.log"     # 日志输出文件，不配置则输出到标准输出
+level = "info"        # 日志级别: trace, debug, info, warn, error
+maxDays = 3           # 日志文件保留天数
